@@ -17,7 +17,6 @@ PKG_CONFIG_PATH="/app/.heroku/vendor/lib/pkgconfig:$PKG_CONFIG_PATH"
 # Syntax sugar.
 source $BIN_DIR/utils
 
-bpwatch start libffi_install
 
 # If pylibmc exists within requirements, use vendored cryptography.
 if (pip-grep -s requirements.txt bcrypt cffi cryptography pyOpenSSL PyOpenSSL requests[security] &> /dev/null) then
@@ -34,4 +33,3 @@ if (pip-grep -s requirements.txt bcrypt cffi cryptography pyOpenSSL PyOpenSSL re
   fi
 fi
 
-bpwatch stop libffi_install
